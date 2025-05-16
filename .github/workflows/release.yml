@@ -21,10 +21,15 @@ jobs:
           node-version: '18.x'
           
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -g electron-builder
         
       - name: Build
-        run: npm run build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run build
         
       - name: Create Release
         uses: softprops/action-gh-release@v1

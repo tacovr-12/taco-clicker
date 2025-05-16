@@ -1,22 +1,22 @@
 {
   "name": "taco-clicker",
-  "version": "2.1.0",
+  "version": "2.1.3",
   "description": "Taco Clicker Game",
   "author": "tacovr-12",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder",
+    "build": "electron-builder build",
     "publish": "electron-builder --publish always",
-    "release": "electron-builder --publish always"
+    "release": "electron-builder build"
   },
   "build": {
     "appId": "com.tacovr12.tacoclicker",
+    "productName": "Taco Clicker",
     "publish": [{
       "provider": "github",
       "owner": "tacovr-12",
-      "repo": "taco-clicker",
-      "releaseType": "release"
+      "repo": "taco-clicker"
     }],
     "win": {
       "target": "nsis",
@@ -26,14 +26,14 @@
       "oneClick": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Super Taco Clicker"
+      "shortcutName": "Taco Clicker"
     }
   },
   "dependencies": {
     "electron-updater": "^6.1.7"
   },
   "devDependencies": {
-    "electron": "^36.2.1",
-    "electron-builder": "^26.0.0"
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
   }
 }

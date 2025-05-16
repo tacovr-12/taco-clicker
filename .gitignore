@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.env
+
+# Build outputs
+dist/
+*.exe
+electron/
+
+# Environment files
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Electron specific - ignore completely
+main.js
+electron.js
+electron-builder.yml
+electron-builder.json
+*.blockmap
+*.exe
+dist/
+release/
+
+# Additional files to exclude
+base-icon.png
+
+# Temporary files
+*.tmp
+*.temp 

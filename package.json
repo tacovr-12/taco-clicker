@@ -6,20 +6,28 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build",
+    "build": "electron-builder build --win",
     "publish": "electron-builder --publish always",
-    "release": "electron-builder build"
+    "release": "electron-builder build --win"
   },
   "build": {
     "appId": "com.tacovr12.tacoclicker",
     "productName": "Taco Clicker",
+    "directories": {
+      "output": "dist"
+    },
     "publish": [{
       "provider": "github",
       "owner": "tacovr-12",
       "repo": "taco-clicker"
     }],
     "win": {
-      "target": "nsis",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
       "artifactName": "${productName}-Setup-${version}.${ext}"
     },
     "nsis": {
